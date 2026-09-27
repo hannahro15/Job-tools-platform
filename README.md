@@ -6,7 +6,7 @@ A job-related platform where there will be a variety of tools such as an applica
 
 - **Authentication** – secure sign up and log in so each user's applications, notes, and data stay private
 - **Application Tracker** – keep track of job applications and their status
-- **Notes** – jot down thoughts, recruiter call notes, and interview reflections, either standalone or linked to a specific application
+- **Notes** – jot down thoughts, recruiter call notes, or technical notes
 - **Job Board** – browse and search job listings
 - **Job Recommendation System** – suggests jobs based on your profile and preferences
 - **ATS Scanner** – checks your resume against applicant tracking systems
