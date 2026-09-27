@@ -25,7 +25,6 @@ A job-related platform where there will be a variety of tools such as an applica
 ## Getting Started
 
 ```bash
-cd job-tools-platform
 npm install
 npm run dev
 ```
