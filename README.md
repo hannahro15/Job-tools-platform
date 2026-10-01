@@ -21,6 +21,8 @@ A job-related platform where there will be a variety of tools such as an applica
 
 - [Next.js](https://nextjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Base UI](https://base-ui.com/)
 
 ## Getting Started
 
