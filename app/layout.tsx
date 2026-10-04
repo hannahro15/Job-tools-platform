@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Job Tools Platform",
-  description: "A website featuring a lot of job tools or jobseekers.",
+  description: "A website featuring a lot of job tools for jobseekers.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
