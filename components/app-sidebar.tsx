@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { UserButton } from "@clerk/nextjs"
+import { Show, SignInButton, UserButton } from "@clerk/nextjs"
 import {
   Briefcase,
   HeartHandshake,
@@ -19,6 +19,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import { Button } from "@/components/ui/button"
 
 // Each link in the sidebar: the text, where it goes, and its icon
 const items = [
@@ -54,7 +55,14 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        <UserButton />
+        <Show when="signed-out">
+          <SignInButton>
+            <Button className="w-full">Sign in</Button>
+          </SignInButton>
+        </Show>
+        <Show when="signed-in">
+          <UserButton />
+        </Show>
       </SidebarFooter>
     </Sidebar>
   )
