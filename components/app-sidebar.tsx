@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { UserButton } from "@clerk/nextjs"
 import {
   Briefcase,
   HeartHandshake,
@@ -52,7 +53,9 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter />
+      <SidebarFooter>
+        <UserButton />
+      </SidebarFooter>
     </Sidebar>
   )
 }
