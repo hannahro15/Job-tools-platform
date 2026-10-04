@@ -1,7 +1,7 @@
-export default function Home() {
+export default function JobApplications() {
   return (
     <div>
-      <h1>Home page</h1>
+      <h1>Job Application Tracker</h1>
     </div>
   );
 }
