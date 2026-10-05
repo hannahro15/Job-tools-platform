@@ -6,6 +6,7 @@ import {
   LayoutDashboard,
   MessagesSquare,
   NotebookPen,
+  House,
 } from "lucide-react"
 
 import {
@@ -23,6 +24,7 @@ import { Button } from "@/components/ui/button"
 
 // Each link in the sidebar: the text, where it goes, and its icon
 const items = [
+    {title: "Home Page", url: "/", icon: House},
   { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
   { title: "Application Tracker", url: "/applications", icon: Briefcase },
   { title: "Notes", url: "/notes", icon: NotebookPen },
