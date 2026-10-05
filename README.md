@@ -28,6 +28,8 @@ A job-related platform where there will be a variety of tools such as an applica
 - [shadcn/ui](https://ui.shadcn.com/)
 - [Base UI](https://base-ui.com/)
 - [Clerk](https://clerk.com/) – authentication
+- [Neon](https://neon.tech/) – Postgres database
+- [Drizzle](https://orm.drizzle.team/) – database ORM
 
 ## Getting Started
 
@@ -35,6 +37,7 @@ A job-related platform where there will be a variety of tools such as an applica
 
 - [Node.js](https://nodejs.org/) 20.9 or later
 - A free [Clerk](https://clerk.com/) account
+- A free [Neon](https://neon.tech/) account
 
 ### Setup
 
@@ -44,7 +47,7 @@ A job-related platform where there will be a variety of tools such as an applica
    npm install
    ```
 
-2. Create a `.env.local` file in the project root with the following variables. Get the two keys from the Clerk dashboard under **API Keys**. Never commit this file.
+2. Create a `.env.local` file in the project root with the following variables. Get the two Clerk keys from the Clerk dashboard under **API Keys**, and the database URL from your Neon project's **Connect** button. Never commit this file.
 
    ```bash
    # Clerk
@@ -55,6 +58,9 @@ A job-related platform where there will be a variety of tools such as an applica
    NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
    NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL=/
    NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/
+
+   # Neon
+   DATABASE_URL=your_neon_connection_string
    ```
 
 3. Start the development server:
