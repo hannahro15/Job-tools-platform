@@ -31,7 +31,7 @@ const items = [
   { title: "Interview Prep", url: "/interview-prep", icon: MessagesSquare },
   {
     title: "Neurodivergent Support",
-    url: "/neurodiverse-support",
+    url: "/neurodivergent-support",
     icon: HeartHandshake,
   },
 ]
