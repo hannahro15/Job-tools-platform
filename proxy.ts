@@ -5,10 +5,9 @@ const isPublicRoute = createRouteMatcher([
   "/",
   "/sign-in(.*)",
   "/sign-up(.*)",
-  "/dashboard(.*)",
-  "/applications(.*)",
-  "/notes(.*)",
+  "/job-board(.*)",
   "/interview-prep(.*)",
+  "/forum(.*)",
   "/neurodivergent-support(.*)",
 ]);
 
