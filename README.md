@@ -2,6 +2,8 @@
 
 A job-related platform where there will be a variety of tools such as an application tracker to help with job hunting including a chatbot which will help candidates talk through their frustrations of job hunting!
 
+**[Try the live demo](https://job-tools-platform.vercel.app/)**
+
 ## Features
 
 - ✅ **Authentication** – secure sign up and log in so each user's applications, notes, and data stay private
