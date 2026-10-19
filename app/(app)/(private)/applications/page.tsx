@@ -6,15 +6,14 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { Button } from
- "@/components/ui/button"
+import AddApplication from "@/components/add-application"
 
 export default function JobApplications() {
   return (
     <div>
       <h1>Job Application Tracker</h1>
       <div>
-      <Button>Add Application</Button>
+      <AddApplication />
       </div>
       <Table>
         <TableCaption>Recent job applications.</TableCaption>
