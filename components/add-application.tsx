@@ -42,13 +42,13 @@ export default function AddApplication() {
                         <div className="flex flex-col gap-1">
                         <label htmlFor="status">Status: </label>
                         <select name="status" id="status" required>
-                            <option>Applied</option>
-                            <option>Screening</option>
-                            <option>Interviewing</option>
-                            <option>Offer</option>
-                            <option>Rejected</option>
-                            <option>Withdrawn</option>
-                            <option>Ghosted</option>
+                            <option value="applied">Applied</option>
+                            <option value="screening">Screening</option>
+                            <option value="interviewing">Interviewing</option>
+                            <option value="offer">Offer</option>
+                            <option value="rejected">Rejected</option>
+                            <option value="withdrawn">Withdrawn</option>
+                            <option value="ghosted">Ghosted</option>
                         </select>
                         </div>
                         <Button type="submit">Save</Button>
