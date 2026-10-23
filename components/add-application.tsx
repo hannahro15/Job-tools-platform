@@ -8,7 +8,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-
+import { addApplication } from "@/app/(app)/(private)/applications/actions"
 import { Button } from "@/components/ui/button"
 
 export default function AddApplication() {
@@ -22,7 +22,7 @@ export default function AddApplication() {
                         Please add job application below.
                     </DialogDescription>
                     </DialogHeader> 
-                        <form className="flex flex-col gap-4">
+                        <form className="flex flex-col gap-4" action={addApplication}>
                          <div className="flex flex-col gap-1">  
                         <label htmlFor="date_applied">Date Applied: </label>
                         <input type="date" name="date_applied" id="date_applied" required/>
