@@ -14,9 +14,11 @@ import { applications } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import { auth } from "@clerk/nextjs/server";
 
-const { userId } = await auth();
 export default async function JobApplications() {
-  
+  const { userId } = await auth();
+  if (!userId) {
+    throw new Error("User not authenticated");
+  }
   const applicationsData = await db.select().from(applications).where(eq(applications.user_id, userId));
 
   return (
