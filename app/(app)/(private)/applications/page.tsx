@@ -45,7 +45,7 @@ export default async function JobApplications() {
               <TableCell>{application.company}</TableCell>
               <TableCell>{application.role}</TableCell>
               <TableCell>{application.location}</TableCell>
-              <TableCell className="text-right">{application.status}</TableCell>
+              <TableCell className="text-right capitalize">{application.status}</TableCell>
             </TableRow>
           ))}
         </TableBody>
