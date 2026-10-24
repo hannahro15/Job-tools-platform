@@ -8,6 +8,7 @@ import {
   TableCell,
 } from "@/components/ui/table"
 import AddApplication from "@/components/add-application"
+import { deleteApplication } from "@/app/(app)/(private)/applications/actions"
 
 import { db } from "@/lib/db";
 import { applications } from "@/lib/db/schema"; 
@@ -36,6 +37,7 @@ export default async function JobApplications() {
             <TableHead>Role</TableHead>
             <TableHead>Location</TableHead>
             <TableHead className="text-right">Status</TableHead>
+            <TableHead className="text-right">Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -46,6 +48,12 @@ export default async function JobApplications() {
               <TableCell>{application.role}</TableCell>
               <TableCell>{application.location}</TableCell>
               <TableCell className="text-right capitalize">{application.status}</TableCell>
+              <TableCell className="text-right">
+                <form action={deleteApplication}>
+                  <input type="hidden" name="id" value={application.id} />
+                  <button type="submit">Delete</button>
+                </form>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
