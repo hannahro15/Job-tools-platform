@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/table"
 import AddApplication from "@/components/add-application"
 import { DeleteApplication } from "@/components/delete-application"
+import { EditApplication } from "@/components/edit-application"
 
 import { db } from "@/lib/db";
 import { applications } from "@/lib/db/schema"; 
@@ -49,6 +50,7 @@ export default async function JobApplications() {
               <TableCell>{application.location}</TableCell>
               <TableCell className="text-right capitalize">{application.status}</TableCell>
               <TableCell className="text-right">
+                <EditApplication applicationId={application.id} />
                 <DeleteApplication applicationId={application.id} />
               </TableCell>
             </TableRow>

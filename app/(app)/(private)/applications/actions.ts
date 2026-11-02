@@ -42,3 +42,27 @@ export async function deleteApplication(formData: FormData) {
     await db.delete(applications).where(and(eq(applications.id, applicationId), eq(applications.user_id, userId)))
     revalidatePath("/applications")
 }
+
+export async function editApplication(formData: FormData) {
+    const { userId } = await auth()
+
+    if (!userId) {
+        throw new Error("User not authenticated")
+    }
+
+    const applicationId = Number(formData.get("id"));
+    const company = formData.get("company") as string;
+    const role = formData.get("role") as string;
+    const dateApplied = new Date(formData.get("date_applied") as string);
+    const location = formData.get("location") as string;
+    const status = formData.get("status") as (typeof applicationStatusEnum.enumValues[number]);
+
+    await db.update(applications).set({
+        company: company,
+        role: role,
+        date_applied: dateApplied,
+        location: location,
+        status: status
+    }).where(and(eq(applications.id, applicationId), eq(applications.user_id, userId)))
+    revalidatePath("/applications")
+}
