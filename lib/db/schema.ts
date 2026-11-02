@@ -12,5 +12,5 @@ export const applications = pgTable("applications", {
     status: applicationStatusEnum().notNull(),
     link: text(),
     created_at: timestamp().defaultNow().notNull(),
-    updated_at: timestamp().defaultNow().notNull(),
+    updated_at: timestamp().defaultNow().notNull().$onUpdate(() => new Date()),
 });
