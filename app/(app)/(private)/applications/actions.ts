@@ -4,8 +4,7 @@ import { auth } from "@clerk/nextjs/server"
 import { db } from "@/lib/db"
 import { applications, applicationStatusEnum } from "@/lib/db/schema";
 import { revalidatePath } from "next/cache"
-import { eq } from "drizzle-orm";
-import { and } from "drizzle-orm";
+import { eq, and } from "drizzle-orm";
 
 
 export async function addApplication(formData: FormData) {
