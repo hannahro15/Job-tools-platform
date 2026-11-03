@@ -22,39 +22,37 @@ export function EditApplication({ applicationId }: { applicationId: number }) {
             Update the details of your job application.
           </DialogDescription>
         </DialogHeader>
-        <form action={editApplication}>
+        <form className="flex flex-col gap-4" action={editApplication}>
           <input type="hidden" name="id" value={applicationId} />
-          <>
-            <label>
-              Company:
-              <input type="text" name="company" />
-            </label>
-            <label>
-              Role:
-              <input type="text" name="role" />
-            </label>
-            <label>
-              Date Applied:
-              <input type="date" name="date_applied" />
-            </label>
-            <label>
-              Location:
-              <input type="text" name="location" />
-            </label>
-            <label>
-              Status:
-                <select name="status" id="status" required>
-                            <option value="applied">Applied</option>
-                            <option value="screening">Screening</option>
-                            <option value="interviewing">Interviewing</option>
-                            <option value="offer">Offer</option>
-                            <option value="rejected">Rejected</option>
-                            <option value="withdrawn">Withdrawn</option>
-                            <option value="ghosted">Ghosted</option>
-                        </select>
-            </label>
-          </>
-          <Button type="submit">Save Changes</Button>
+          <div className="flex flex-col gap-1">
+            <label htmlFor="date_applied">Date Applied: </label>
+            <input type="date" name="date_applied" id="date_applied" required />
+          </div>
+          <div className="flex flex-col gap-1">
+            <label htmlFor="company">Company: </label>
+            <input type="text" name="company" id="company" required />
+          </div>
+          <div className="flex flex-col gap-1">
+            <label htmlFor="role">Role: </label>
+            <input type="text" name="role" id="role" required />
+          </div>
+          <div className="flex flex-col gap-1">
+            <label htmlFor="location">Location: </label>
+            <input type="text" name="location" id="location" required />
+          </div>
+          <div className="flex flex-col gap-1">
+            <label htmlFor="status">Status: </label>
+            <select name="status" id="status" required>
+              <option value="applied">Applied</option>
+              <option value="screening">Screening</option>
+              <option value="interviewing">Interviewing</option>
+              <option value="offer">Offer</option>
+              <option value="rejected">Rejected</option>
+              <option value="withdrawn">Withdrawn</option>
+              <option value="ghosted">Ghosted</option>
+            </select>
+          </div>
+          <Button type="submit">Save</Button>
         </form>
       </DialogContent>
     </Dialog>
