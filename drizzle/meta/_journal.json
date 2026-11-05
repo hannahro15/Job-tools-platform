@@ -15,6 +15,13 @@
       "when": 1792484291289,
       "tag": "0001_rainy_ezekiel",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793894652349,
+      "tag": "0002_smart_corsair",
+      "breakpoints": true
     }
   ]
 }

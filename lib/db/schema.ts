@@ -35,3 +35,29 @@ export const applications = pgTable("applications", {
 });
 
 export type Application = typeof applications.$inferSelect;
+
+export const NoteCategoryEnum = pgEnum("notes_category", [
+  "job",
+  "interview",
+  "technical",
+  "networking",
+  "general",
+]);
+
+export const notes = pgTable("notes", {
+  id: integer().primaryKey().generatedAlwaysAsIdentity(),
+  user_id: text().notNull(),
+  title: varchar({ length: 255 }).notNull(),
+  application_id: integer().references(() => applications.id, {
+    onDelete: "set null",
+  }),
+  category: NoteCategoryEnum().default("general").notNull(),
+  content: text().notNull(),
+  created_at: timestamp().defaultNow().notNull(),
+  updated_at: timestamp()
+    .defaultNow()
+    .notNull()
+    .$onUpdate(() => new Date()),
+});
+
+export type Note = typeof notes.$inferSelect;
