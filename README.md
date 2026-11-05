@@ -11,17 +11,14 @@ A job-related platform with a variety of tools to help with job hunting, startin
 
 ## Planned Features
 
-- **Application Tracker improvements** – edit applications, filter by status, and a details page for each application
-- **Notes** – jot down thoughts, recruiter call notes, or technical notes
-- **Job Board** – browse and search job listings
-- **ATS Scanner** – checks your resume against applicant tracking systems
-- **Chatbot** – talk through job hunting frustrations and get support
-- **Discussion Forum** – community space to share advice, experiences, and support
-- **Resume Builder/Editor** – create and tailor resumes for specific roles
-- **Cover Letter Builder** – write cover letters for each application, starting from templates
-- **Interview Prep** – mock interview questions and practice, including technical/coding interviews
-- **Neurodivergent Support** – tailored resources and accommodations guidance for neurodivergent jobseekers
-- **Analytics Dashboard** – visualize application success rates, response times, etc.
+- **Application Tracker improvements** – edit applications, filter by status, follow-up dates, and a details page for each application
+- **Notes** (in progress) – jot down recruiter calls, interview thoughts, or technical notes, sorted by category and optionally linked to an application
+- **Job Boards and Communities** – a curated list of job boards and jobseeker communities, including inclusive and neurodiversity-friendly ones
+- **CV Keyword Checker** – paste a job description and your CV to see which keywords are missing
+- **Cover Letter Templates** – templates to copy and adapt for each application
+- **Interview Question Guide** – common interview questions by type, with tips and the STAR method
+- **Neurodivergent Support** – resources on disclosure, interview adjustments and workplace accommodations, plus adjustment request templates
+- **Dashboard** – simple stats on your job search: applications by status, applications per week, and response rate
 
 ## Tech Stack
 
