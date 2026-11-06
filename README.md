@@ -91,7 +91,7 @@ A job-related platform with a variety of tools to help with job hunting, startin
 
 ## Project Structure
 
-- `app/(app)/` – pages that show the sidebar (home, job board, forum, etc.)
+- `app/(app)/` – pages that show the sidebar (home, job boards, interview prep, etc.)
 - `app/(app)/(private)/` – pages that need signing in (dashboard, applications, notes, etc.). Signed-out visitors see a sign-in message instead
 - `app/(app)/(private)/applications/actions.ts` – server actions for adding and deleting applications
 - `app/(auth)/` – sign in and sign up pages
