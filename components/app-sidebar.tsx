@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { Show, SignInButton, UserButton } from "@clerk/nextjs"
+import Link from "next/link";
+import { Show, SignInButton, UserButton } from "@clerk/nextjs";
 import {
   Briefcase,
   HeartHandshake,
@@ -9,12 +9,8 @@ import {
   House,
   ScanSearch,
   Search,
-  Users,
-  Bot,
-  FileText,
   MailPen,
-  User
-} from "lucide-react"
+} from "lucide-react";
 
 import {
   Sidebar,
@@ -26,8 +22,8 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
-import { Button } from "@/components/ui/button"
+} from "@/components/ui/sidebar";
+import { Button } from "@/components/ui/button";
 
 // Each link in the sidebar: the text, where it goes, and its icon
 const items = [
@@ -36,21 +32,19 @@ const items = [
   { title: "Job Board", url: "/job-board", icon: Search },
   { title: "Application Tracker", url: "/applications", icon: Briefcase },
   { title: "Notes", url: "/notes", icon: NotebookPen },
-  { title: "Resume Builder", url:"/resume-builder", icon: FileText },
-  { title: "Cover Letter Builder", url:"/cover-letter-builder", icon: MailPen},
+  {
+    title: "Cover Letter Builder",
+    url: "/cover-letter-builder",
+    icon: MailPen,
+  },
   { title: "ATS Scanner", url: "/ats-scanner", icon: ScanSearch },
   { title: "Interview Prep", url: "/interview-prep", icon: MessagesSquare },
-  { title: 'Career Support Chatbot', url: "/chatbot", icon: Bot},
-  { title: "Job Forum", url: "/forum" , icon: Users },
   {
     title: "Neurodivergent Support",
     url: "/neurodivergent-support",
     icon: HeartHandshake,
   },
-  { title: "Profile", url: "/profile", icon: User}
-  
-
-]
+];
 
 export function AppSidebar() {
   return (
@@ -83,5 +77,5 @@ export function AppSidebar() {
         </Show>
       </SidebarFooter>
     </Sidebar>
-  )
+  );
 }
