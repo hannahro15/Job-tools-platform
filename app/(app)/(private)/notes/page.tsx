@@ -3,6 +3,7 @@ import { db } from "@/lib/db";
 import { notes } from "@/lib/db/schema";
 import { eq, desc } from "drizzle-orm";
 import { auth } from "@clerk/nextjs/server";
+import { DeleteNote } from "@/components/delete-note";
 
 export default async function Notes() {
   const { userId } = await auth();
@@ -27,6 +28,7 @@ export default async function Notes() {
             <p>Category: {note.category}</p>
             <p>{note.content}</p>
             <p>Created at: {note.created_at.toLocaleDateString()}</p>
+            <DeleteNote noteId={note.id} />
           </li>
         ))}
       </ul>
