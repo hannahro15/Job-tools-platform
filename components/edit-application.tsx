@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Dialog,
@@ -7,11 +7,12 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { editApplication } from "@/app/(app)/(private)/applications/actions"
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { editApplication } from "@/app/(app)/(private)/applications/actions";
+import type { Application } from "@/lib/db/schema";
 
-export function EditApplication({ applicationId }: { applicationId: number }) {
+export function EditApplication({ application }: { application: Application }) {
   return (
     <Dialog>
       <DialogTrigger render={<Button />}>Edit Application</DialogTrigger>
@@ -23,7 +24,7 @@ export function EditApplication({ applicationId }: { applicationId: number }) {
           </DialogDescription>
         </DialogHeader>
         <form className="flex flex-col gap-4" action={editApplication}>
-          <input type="hidden" name="id" value={applicationId} />
+          <input type="hidden" name="id" value={application.id} />
           <div className="flex flex-col gap-1">
             <label htmlFor="date_applied">Date Applied: </label>
             <input type="date" name="date_applied" id="date_applied" required />
@@ -56,5 +57,5 @@ export function EditApplication({ applicationId }: { applicationId: number }) {
         </form>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

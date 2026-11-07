@@ -6,13 +6,13 @@ import {
   TableHeader,
   TableRow,
   TableCell,
-} from "@/components/ui/table"
-import AddApplication from "@/components/add-application"
-import { DeleteApplication } from "@/components/delete-application"
-import { EditApplication } from "@/components/edit-application"
+} from "@/components/ui/table";
+import AddApplication from "@/components/add-application";
+import { DeleteApplication } from "@/components/delete-application";
+import { EditApplication } from "@/components/edit-application";
 
 import { db } from "@/lib/db";
-import { applications } from "@/lib/db/schema"; 
+import { applications } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import { auth } from "@clerk/nextjs/server";
 
@@ -21,13 +21,16 @@ export default async function JobApplications() {
   if (!userId) {
     throw new Error("User not authenticated");
   }
-  const applicationsData = await db.select().from(applications).where(eq(applications.user_id, userId));
+  const applicationsData = await db
+    .select()
+    .from(applications)
+    .where(eq(applications.user_id, userId));
 
   return (
     <div>
       <h1>Job Application Tracker</h1>
       <div>
-      <AddApplication />
+        <AddApplication />
       </div>
       <Table>
         <TableCaption>Recent job applications.</TableCaption>
@@ -44,13 +47,17 @@ export default async function JobApplications() {
         <TableBody>
           {applicationsData.map((application) => (
             <TableRow key={application.id}>
-              <TableCell>{application.date_applied.toLocaleDateString()}</TableCell>
+              <TableCell>
+                {application.date_applied.toLocaleDateString()}
+              </TableCell>
               <TableCell>{application.company}</TableCell>
               <TableCell>{application.role}</TableCell>
               <TableCell>{application.location}</TableCell>
-              <TableCell className="text-right capitalize">{application.status}</TableCell>
+              <TableCell className="text-right capitalize">
+                {application.status}
+              </TableCell>
               <TableCell className="text-right">
-                <EditApplication applicationId={application.id} />
+                <EditApplication application={application} />
                 <DeleteApplication applicationId={application.id} />
               </TableCell>
             </TableRow>
