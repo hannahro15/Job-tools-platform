@@ -27,23 +27,52 @@ export function EditApplication({ application }: { application: Application }) {
           <input type="hidden" name="id" value={application.id} />
           <div className="flex flex-col gap-1">
             <label htmlFor="date_applied">Date Applied: </label>
-            <input type="date" name="date_applied" id="date_applied" required />
+            <input
+              defaultValue={application.date_applied.toISOString().slice(0, 10)}
+              type="date"
+              name="date_applied"
+              id="date_applied"
+              required
+            />
           </div>
           <div className="flex flex-col gap-1">
             <label htmlFor="company">Company: </label>
-            <input type="text" name="company" id="company" required />
+            <input
+              defaultValue={application.company}
+              type="text"
+              name="company"
+              id="company"
+              required
+            />
           </div>
           <div className="flex flex-col gap-1">
             <label htmlFor="role">Role: </label>
-            <input type="text" name="role" id="role" required />
+            <input
+              defaultValue={application.role}
+              type="text"
+              name="role"
+              id="role"
+              required
+            />
           </div>
           <div className="flex flex-col gap-1">
             <label htmlFor="location">Location: </label>
-            <input type="text" name="location" id="location" required />
+            <input
+              defaultValue={application.location}
+              type="text"
+              name="location"
+              id="location"
+              required
+            />
           </div>
           <div className="flex flex-col gap-1">
             <label htmlFor="status">Status: </label>
-            <select name="status" id="status" required>
+            <select
+              name="status"
+              id="status"
+              defaultValue={application.status}
+              required
+            >
               <option value="applied">Applied</option>
               <option value="screening">Screening</option>
               <option value="interviewing">Interviewing</option>
