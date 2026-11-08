@@ -7,14 +7,14 @@ A job-related platform with a variety of tools to help with job hunting, startin
 ## Features
 
 - ✅ **Authentication** – secure sign up and log in so each user's applications, notes, and data stay private
-- ✅ **Application Tracker** – add your job applications, see them in a table, and delete them (with a confirmation step). Each user only sees their own applications
+- ✅ **Application Tracker** – add your job applications, see them in a table, edit them (the form opens with the current details), and delete them (with a confirmation step). Each user only sees their own applications
+- 🚧 **Notes** (in progress) – write notes such as recruiter calls, interview thoughts or technical notes, each with a category. You can add, view (newest first) and delete them; editing is coming next
+- ✅ **404 and error pages** – friendly pages for missing URLs and unexpected errors, with a way back home
 
 ## Planned Features
 
-- **Application Tracker improvements** – edit applications, filter by status, follow-up dates, and a details page for each application
-- **Notes** (in progress) – jot down recruiter calls, interview thoughts, or technical notes, sorted by category and optionally linked to an application
+- **Application Tracker improvements** – filter by status and sort newest first
 - **Job Boards and Communities** – a curated list of job boards and jobseeker communities, including inclusive and neurodiversity-friendly ones
-- **CV Keyword Checker** – paste a job description and your CV to see which keywords are missing
 - **Cover Letter Templates** – templates to copy and adapt for each application
 - **Interview Question Guide** – common interview questions by type, with tips and the STAR method
 - **Neurodivergent Support** – resources on disclosure, interview adjustments and workplace accommodations, plus adjustment request templates
@@ -93,9 +93,11 @@ A job-related platform with a variety of tools to help with job hunting, startin
 
 - `app/(app)/` – pages that show the sidebar (home, job boards, interview prep, etc.)
 - `app/(app)/(private)/` – pages that need signing in (dashboard, applications, notes, etc.). Signed-out visitors see a sign-in message instead
-- `app/(app)/(private)/applications/actions.ts` – server actions for adding and deleting applications
+- `app/(app)/(private)/applications/actions.ts` – server actions for adding, editing and deleting applications
+- `app/(app)/(private)/notes/actions.ts` – server actions for adding and deleting notes
+- `app/(app)/error.tsx` and `app/not-found.tsx` – error and 404 pages
 - `app/(auth)/` – sign in and sign up pages
-- `components/` – shared components, including the sidebar and the add/delete application dialogs
+- `components/` – shared components, including the sidebar, the add/edit/delete application dialogs and the add/delete note dialogs
 - `components/ui/` – shadcn/ui components
 - `lib/db/` – database connection and Drizzle schema
 - `drizzle/` – database migrations
