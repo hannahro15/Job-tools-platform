@@ -8,7 +8,7 @@ A job-related platform with a variety of tools to help with job hunting, startin
 
 - ✅ **Authentication** – secure sign up and log in so each user's applications, notes, and data stay private
 - ✅ **Application Tracker** – add your job applications, see them in a table, edit them (the form opens with the current details), and delete them (with a confirmation step). Each user only sees their own applications
-- 🚧 **Notes** (in progress) – write notes such as recruiter calls, interview thoughts or technical notes, each with a category. You can add, view (newest first) and delete them; editing is coming next
+- ✅ **Notes** – write notes such as recruiter calls, interview thoughts or technical notes, each with a category. You can add, view (newest first), edit and delete them
 - ✅ **404 and error pages** – friendly pages for missing URLs and unexpected errors, with a way back home
 
 ## Planned Features
@@ -94,10 +94,10 @@ A job-related platform with a variety of tools to help with job hunting, startin
 - `app/(app)/` – pages that show the sidebar (home, job boards, interview prep, etc.)
 - `app/(app)/(private)/` – pages that need signing in (dashboard, applications, notes, etc.). Signed-out visitors see a sign-in message instead
 - `app/(app)/(private)/applications/actions.ts` – server actions for adding, editing and deleting applications
-- `app/(app)/(private)/notes/actions.ts` – server actions for adding and deleting notes
+- `app/(app)/(private)/notes/actions.ts` – server actions for adding, editing and deleting notes
 - `app/(app)/error.tsx` and `app/not-found.tsx` – error and 404 pages
 - `app/(auth)/` – sign in and sign up pages
-- `components/` – shared components, including the sidebar, the add/edit/delete application dialogs and the add/delete note dialogs
+- `components/` – shared components, including the sidebar, the add/edit/delete application dialogs and the add/edit/delete note dialogs
 - `components/ui/` – shadcn/ui components
 - `lib/db/` – database connection and Drizzle schema
 - `drizzle/` – database migrations
