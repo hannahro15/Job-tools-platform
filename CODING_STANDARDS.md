@@ -8,7 +8,7 @@ Rules for reviewing changes to this app. They apply to new and changed code; exi
 - **Short and flat.** Return early instead of nesting `if`s. If a function no longer fits on one screen, split it.
 - **No dead code.** Delete unused imports, variables and commented-out code; git keeps the history.
 - **No magic values.** Repeated strings and numbers (lengths, week counts, labels) get a named constant in one place.
-- **Add comments.** Each helper in `lib/` and each server action gets a one-line comment saying what it's for. Add a comment wherever the reason isn't obvious from the code: a gotcha (e.g. why the date uses `timeZone: "UTC"`), a rule (e.g. why withdrawn applications are left out of the response rate), or a workaround.
+- **Add comments.** Each helper in `lib/` and each server action gets a one-line comment saying when to use it or what it guards against, not a repeat of its name (`// Used by add and edit so both forms reject the same input`, not `// Validates a note`). Add a comment wherever the reason isn't obvious from the code: a gotcha (e.g. why the date uses `timeZone: "UTC"`), a rule (e.g. why withdrawn applications are left out of the response rate), or a workaround.
 - **Comments explain why, not what.** `// Filter on user_id so users only see their own rows` helps; `// Set the company` doesn't. If a comment only repeats the code, rename or split the code instead.
 - **Keep comments true.** Update or delete a comment when the code under it changes.
 - **Formatted with Prettier** before committing.
@@ -34,8 +34,8 @@ These apply once Vitest is set up (#9).
 ## Data and security
 
 - **Ownership.** Every update and delete filters on both the row id **and** `user_id`: `and(eq(table.id, id), eq(table.user_id, userId))`. Every read filters on `user_id`. A user must never see or change another user's rows, including through a linked row (e.g. a note linked to an application must belong to the same user).
-- **Auth.** Get the user with `const { userId } = await auth()` from `@clerk/nextjs/server`. Server actions check `userId` before doing anything.
-- **Validate on the server.** Server actions never trust `FormData`. Check every value with the helpers in `lib/validation.ts`: required strings are trimmed and non-empty, lengths fit the column, enum values are in `enumValues`, dates are valid, and ids are integers. `as string` is not validation.
+- **Auth.** Get the user with `const { userId } = await auth()` from `@clerk/nextjs/server`. There is no `@/lib/auth`, and `auth()` has no `.id`. Server actions check `userId` before doing anything.
+- **Validate on the server.** Server actions never trust `FormData`. Check every value with the helpers in `lib/validation.ts`: required strings are trimmed and non-empty, lengths fit the column, enum values are in `enumValues`, dates are valid, and ids are positive integers. `as string` is not validation.
 - **Enums are the single source of truth.** Status and category values come from `applicationStatusEnum.enumValues` and `NoteCategoryEnum.enumValues`, never a hardcoded list. Display labels live in one lookup next to the enums.
 - **Schema changes ship with their migration.** Commit `lib/db/schema.ts` together with the generated SQL, snapshot and journal in `drizzle/`.
 - **Column names are snake_case** (`user_id`, `date_applied`).
@@ -43,7 +43,7 @@ These apply once Vitest is set up (#9).
 ## Server actions
 
 - Take `formData: FormData`, run as a form `action` (not `onClick`), and call `revalidatePath` for the page they change.
-- Ids travel in a hidden input and are converted with `Number(...)`, then checked.
+- Ids travel in a hidden input and are converted with `Number(...)`, then checked to be a positive integer (`Number.isInteger(id) && id > 0`). A missing or empty id becomes `0`, which would quietly match no row.
 
 ## Components
 

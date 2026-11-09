@@ -37,14 +37,6 @@ A portfolio project: job-search tools for jobseekers, with a focus on neurodiver
 - `lib/db/schema.ts` – tables, enums and row types (`Application`, `Note` via `$inferSelect`)
 - `drizzle/` – migrations (commit the SQL, snapshot and journal together with the schema change)
 
-## Conventions and gotchas
+## Coding standards
 
-- **Auth:** `import { auth } from "@clerk/nextjs/server"` and `const { userId } = await auth()`. There is no `@/lib/auth`, and `auth()` has no `.id`.
-- **Ownership:** every update and delete must filter on both the row id **and** `user_id`, using `and(eq(table.id, id), eq(table.user_id, userId))`. Every read filters on `user_id`.
-- **Column names are snake_case** (`user_id`, `created_at`, `date_applied`), not camelCase.
-- **Server actions** take `formData: FormData`, are used as a form `action` (not `onClick`), and call `revalidatePath` afterwards. Pass ids through a hidden input and convert them with `Number(...)`.
-- **Base UI, not Radix:** use the `render` prop, e.g. `<DialogTrigger render={<Button />}>Label</DialogTrigger>`. There is no `asChild`.
-- **`Link`** comes from `next/link`, not `lucide-react` (which only has a link icon).
-- **Edit forms** take the full row (`application: Application`, `note: Note`) and use `defaultValue`, not `value`. Date inputs need `date.toISOString().slice(0, 10)`.
-- **Error pages** (`error.tsx`) get `{ error, retry }`; this Next version uses `retry`, not `reset`. Check `node_modules/next/dist/docs/` before relying on memory.
-- File names are kebab-case and singular (`add-note.tsx`, `edit-note.tsx`); components use named exports (except `AddApplication`, which is a default export).
+Read `CODING_STANDARDS.md` before writing or reviewing code: ownership checks, auth, server actions, validation, Base UI, naming, comments, tests and accessibility.
