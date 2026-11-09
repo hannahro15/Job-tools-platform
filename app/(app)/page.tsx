@@ -16,8 +16,8 @@ export default function Home() {
         </SignUpButton>
       </Show>
       <Show when="signed-in">
-        <Button nativeButton={false} render={<Link href="/dashboard" />}>
-          Go to dashboard
+        <Button nativeButton={false} render={<Link href="/applications" />}>
+          Go to application tracker
         </Button>
       </Show>
     </div>

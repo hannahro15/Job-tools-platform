@@ -7,7 +7,6 @@ import {
   MessagesSquare,
   NotebookPen,
   House,
-  ScanSearch,
   Search,
   MailPen,
 } from "lucide-react";
