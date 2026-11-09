@@ -13,7 +13,7 @@ import { EditApplication } from "./_components/edit-application";
 
 import { db } from "@/lib/db";
 import { applications } from "@/lib/db/schema";
-import { eq } from "drizzle-orm";
+import { eq, desc } from "drizzle-orm";
 import { auth } from "@clerk/nextjs/server";
 
 export default async function JobApplications() {
@@ -24,7 +24,8 @@ export default async function JobApplications() {
   const applicationsData = await db
     .select()
     .from(applications)
-    .where(eq(applications.user_id, userId));
+    .where(eq(applications.user_id, userId))
+    .orderBy(desc(applications.date_applied));
 
   return (
     <div>
