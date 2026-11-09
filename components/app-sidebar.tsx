@@ -37,7 +37,6 @@ const items = [
     url: "/cover-letter-builder",
     icon: MailPen,
   },
-  { title: "ATS Scanner", url: "/ats-scanner", icon: ScanSearch },
   { title: "Interview Prep", url: "/interview-prep", icon: MessagesSquare },
   {
     title: "Neurodivergent Support",
