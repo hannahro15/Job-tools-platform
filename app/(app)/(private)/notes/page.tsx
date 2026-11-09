@@ -1,10 +1,10 @@
-import { AddNote } from "@/components/add-note";
+import { AddNote } from "./_components/add-note";
 import { db } from "@/lib/db";
 import { notes } from "@/lib/db/schema";
 import { eq, desc } from "drizzle-orm";
 import { auth } from "@clerk/nextjs/server";
-import { DeleteNote } from "@/components/delete-note";
-import { EditNote } from "@/components/edit-note";
+import { DeleteNote } from "./_components/delete-note";
+import { EditNote } from "./_components/edit-note";
 
 export default async function Notes() {
   const { userId } = await auth();

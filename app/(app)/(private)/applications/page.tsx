@@ -7,9 +7,9 @@ import {
   TableRow,
   TableCell,
 } from "@/components/ui/table";
-import AddApplication from "@/components/add-application";
-import { DeleteApplication } from "@/components/delete-application";
-import { EditApplication } from "@/components/edit-application";
+import AddApplication from "./_components/add-application";
+import { DeleteApplication } from "./_components/delete-application";
+import { EditApplication } from "./_components/edit-application";
 
 import { db } from "@/lib/db";
 import { applications } from "@/lib/db/schema";

@@ -93,11 +93,12 @@ A job-related platform with a variety of tools to help with job hunting, startin
 
 - `app/(app)/` – pages that show the sidebar (home, job boards, interview prep, etc.)
 - `app/(app)/(private)/` – pages that need signing in (dashboard, applications, notes, etc.). Signed-out visitors see a sign-in message instead
-- `app/(app)/(private)/applications/actions.ts` – server actions for adding, editing and deleting applications
-- `app/(app)/(private)/notes/actions.ts` – server actions for adding, editing and deleting notes
+- `app/(app)/(private)/applications/` – the application tracker: `page.tsx`, `actions.ts` (server actions for adding, editing and deleting applications) and `_components/` (the add/edit/delete dialogs)
+- `app/(app)/(private)/notes/` – notes: `page.tsx`, `actions.ts` (server actions for adding, editing and deleting notes) and `_components/` (the add/edit/delete dialogs)
+- `_components/` folders – components used by only one feature. The `_` prefix tells Next.js they aren't routes
 - `app/(app)/error.tsx` and `app/not-found.tsx` – error and 404 pages
 - `app/(auth)/` – sign in and sign up pages
-- `components/` – shared components, including the sidebar, the add/edit/delete application dialogs and the add/edit/delete note dialogs
+- `components/` – components shared across the app: the sidebar, demo banner and coming soon message
 - `components/ui/` – shadcn/ui components
 - `lib/db/` – database connection and Drizzle schema
 - `drizzle/` – database migrations

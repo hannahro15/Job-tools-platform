@@ -31,8 +31,9 @@ A portfolio project: job-search tools for jobseekers, with a focus on neurodiver
 
 - `app/(app)/` – pages with the sidebar; public pages live here
 - `app/(app)/(private)/` – signed-in pages; the layout shows a sign-in prompt when signed out
-- `app/(app)/(private)/<feature>/actions.ts` – server actions (`"use server"`)
-- `components/` – feature components (dialogs, sidebar); `components/ui/` – shadcn components
+- `app/(app)/(private)/<feature>/` – each feature is self-contained: `page.tsx`, `actions.ts` (server actions, `"use server"`) and `_components/` (dialogs used only by that feature; `_` keeps the folder out of routing)
+- `components/` – only components shared across the app (sidebar, demo banner, coming soon); `components/ui/` – shadcn components
+- A new component used by one feature goes in that feature's `_components/`; move it to `components/` only once a second feature needs it
 - `lib/db/schema.ts` – tables, enums and row types (`Application`, `Note` via `$inferSelect`)
 - `drizzle/` – migrations (commit the SQL, snapshot and journal together with the schema change)
 
