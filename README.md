@@ -1,19 +1,19 @@
 # Job-tools-platform
 
-A job-related platform with a variety of tools to help with job hunting, starting with an application tracker.
+A job-related platform with a variety of tools to help with job hunting, starting with an application tracker. It's designed with neurodivergent jobseekers in mind: plain language, a calm layout, and support resources on disclosure and workplace adjustments.
 
 **[Try the live demo](https://job-tools-platform.vercel.app/)**
 
 ## Features
 
 - ✅ **Authentication** – secure sign up and log in so each user's applications, notes, and data stay private
-- ✅ **Application Tracker** – add your job applications, see them in a table, edit them (the form opens with the current details), and delete them (with a confirmation step). Each user only sees their own applications
+- ✅ **Application Tracker** – add your job applications, see them in a table (newest first), edit them (the form opens with the current details), and delete them (with a confirmation step). Each user only sees their own applications
 - ✅ **Notes** – write notes such as recruiter calls, interview thoughts or technical notes, each with a category. You can add, view (newest first), edit and delete them
 - ✅ **404 and error pages** – friendly pages for missing URLs and unexpected errors, with a way back home
 
 ## Planned Features
 
-- **Application Tracker improvements** – filter by status and sort newest first
+- **Application Tracker improvements** – filter by status, an Assessment status for tests and assessment centres, and changing status straight from the table
 - **Job Boards and Communities** – a curated list of job boards and jobseeker communities, including inclusive and neurodiversity-friendly ones
 - **Cover Letter Templates** – templates to copy and adapt for each application
 - **Interview Question Guide** – common interview questions by type, with tips and the STAR method
@@ -85,6 +85,7 @@ A job-related platform with a variety of tools to help with job hunting, startin
 - `npm run build` – build the app for production
 - `npm run start` – run the production build
 - `npm run lint` – check the code with ESLint
+- `npx tsc --noEmit` – type check the code
 - `npx drizzle-kit generate` – create a migration after changing `lib/db/schema.ts`
 - `npx drizzle-kit migrate` – apply migrations to the database
 - `npx drizzle-kit studio` – browse the database in the browser
@@ -100,6 +101,9 @@ A job-related platform with a variety of tools to help with job hunting, startin
 - `app/(auth)/` – sign in and sign up pages
 - `components/` – components shared across the app: the sidebar, demo banner and coming soon message
 - `components/ui/` – shadcn/ui components
+- `hooks/` – React hooks (`use-mobile.ts` tells the sidebar when to switch to its phone layout)
 - `lib/db/` – database connection and Drizzle schema
+- `lib/utils.ts` – small shared helpers
 - `drizzle/` – database migrations
 - `proxy.ts` – runs Clerk on every request so pages and server actions know who is signed in
+- `CODING_STANDARDS.md` – the rules the code follows: ownership checks, validation, naming, comments, tests and accessibility
