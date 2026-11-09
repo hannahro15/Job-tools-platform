@@ -4,7 +4,6 @@ import { Show, SignInButton, SignUpButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
-  
   return (
     <div>
       <h1>Home page</h1>
@@ -17,7 +16,9 @@ export default function Home() {
         </SignUpButton>
       </Show>
       <Show when="signed-in">
-        <Button nativeButton={false} render={<Link href="/dashboard" />}>Go to dashboard</Button>
+        <Button nativeButton={false} render={<Link href="/dashboard" />}>
+          Go to dashboard
+        </Button>
       </Show>
     </div>
   );

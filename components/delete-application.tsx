@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   AlertDialog,
@@ -10,23 +10,24 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
-import { Button } from "@/components/ui/button"
+} from "@/components/ui/alert-dialog";
+import { Button } from "@/components/ui/button";
 
-import { deleteApplication } from "@/app/(app)/(private)/applications/actions"
-
+import { deleteApplication } from "@/app/(app)/(private)/applications/actions";
 
 interface DeleteApplicationProps {
-    applicationId: number;
+  applicationId: number;
 }
 
 export function DeleteApplication({ applicationId }: DeleteApplicationProps) {
-    return (
-        <AlertDialog>
+  return (
+    <AlertDialog>
       <AlertDialogTrigger render={<Button variant="outline">Delete</Button>} />
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure you want to delete this application?</AlertDialogTitle>
+          <AlertDialogTitle>
+            Are you absolutely sure you want to delete this application?
+          </AlertDialogTitle>
           <AlertDialogDescription>
             This action cannot be undone. This will permanently delete your
             application from the database.
@@ -41,5 +42,5 @@ export function DeleteApplication({ applicationId }: DeleteApplicationProps) {
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
-    );
+  );
 }
