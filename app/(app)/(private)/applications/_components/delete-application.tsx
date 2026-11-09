@@ -37,7 +37,9 @@ export function DeleteApplication({ applicationId }: DeleteApplicationProps) {
           <AlertDialogCancel>Cancel</AlertDialogCancel>
           <form action={deleteApplication}>
             <input type="hidden" name="id" value={applicationId} />
-            <AlertDialogAction type="submit">Delete</AlertDialogAction>
+            <AlertDialogAction variant="destructive" type="submit">
+              Delete
+            </AlertDialogAction>
           </form>
         </AlertDialogFooter>
       </AlertDialogContent>

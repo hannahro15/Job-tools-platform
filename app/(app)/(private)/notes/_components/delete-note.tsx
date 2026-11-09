@@ -30,7 +30,9 @@ export function DeleteNote({ noteId }: { noteId: number }) {
           <AlertDialogCancel>Cancel</AlertDialogCancel>
           <form action={deleteNote}>
             <input type="hidden" name="id" value={noteId} />
-            <AlertDialogAction type="submit">Delete</AlertDialogAction>
+            <AlertDialogAction variant="destructive" type="submit">
+              Delete
+            </AlertDialogAction>
           </form>
         </AlertDialogFooter>
       </AlertDialogContent>
