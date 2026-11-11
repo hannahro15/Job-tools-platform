@@ -36,7 +36,7 @@ export const applications = pgTable("applications", {
 
 export type Application = typeof applications.$inferSelect;
 
-export const NoteCategoryEnum = pgEnum("notes_category", [
+export const noteCategoryEnum = pgEnum("notes_category", [
   "job",
   "interview",
   "technical",
@@ -51,7 +51,7 @@ export const notes = pgTable("notes", {
   application_id: integer().references(() => applications.id, {
     onDelete: "set null",
   }),
-  category: NoteCategoryEnum().default("general").notNull(),
+  category: noteCategoryEnum().default("general").notNull(),
   content: text().notNull(),
   created_at: timestamp().defaultNow().notNull(),
   updated_at: timestamp()

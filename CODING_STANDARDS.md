@@ -36,7 +36,7 @@ These apply once Vitest is set up (#9).
 - **Ownership.** Every update and delete filters on both the row id **and** `user_id`: `and(eq(table.id, id), eq(table.user_id, userId))`. Every read filters on `user_id`. A user must never see or change another user's rows, including through a linked row (e.g. a note linked to an application must belong to the same user).
 - **Auth.** Get the user with `const { userId } = await auth()` from `@clerk/nextjs/server`. There is no `@/lib/auth`, and `auth()` has no `.id`. Server actions check `userId` before doing anything.
 - **Validate on the server.** Server actions never trust `FormData`. Check every value with the helpers in `lib/validation.ts`: required strings are trimmed and non-empty, lengths fit the column, enum values are in `enumValues`, dates are valid, and ids are positive integers. `as string` is not validation.
-- **Enums are the single source of truth.** Status and category values come from `applicationStatusEnum.enumValues` and `NoteCategoryEnum.enumValues`, never a hardcoded list. Display labels live in one lookup next to the enums.
+- **Enums are the single source of truth.** Status and category values come from `applicationStatusEnum.enumValues` and `noteCategoryEnum.enumValues`, never a hardcoded list. Display labels live in one lookup next to the enums.
 - **Schema changes ship with their migration.** Commit `lib/db/schema.ts` together with the generated SQL, snapshot and journal in `drizzle/`.
 - **Column names are snake_case** (`user_id`, `date_applied`).
 

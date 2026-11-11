@@ -1,6 +1,6 @@
 "use server";
 
-import { notes, NoteCategoryEnum } from "@/lib/db/schema";
+import { notes, noteCategoryEnum } from "@/lib/db/schema";
 import { and, eq } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
@@ -13,7 +13,7 @@ export async function addNote(formData: FormData) {
   const title = formData.get("title") as string;
   const category = formData.get(
     "category",
-  ) as (typeof NoteCategoryEnum.enumValues)[number];
+  ) as (typeof noteCategoryEnum.enumValues)[number];
   const content = formData.get("content") as string;
 
   await db.insert(notes).values({
@@ -46,7 +46,7 @@ export async function editNote(formData: FormData) {
   const title = formData.get("title") as string;
   const category = formData.get(
     "category",
-  ) as (typeof NoteCategoryEnum.enumValues)[number];
+  ) as (typeof noteCategoryEnum.enumValues)[number];
   const content = formData.get("content") as string;
 
   await db
