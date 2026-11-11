@@ -29,8 +29,10 @@ export default async function Notes() {
             <p>Category: {note.category}</p>
             <p>{note.content}</p>
             <p>Created at: {note.created_at.toLocaleDateString()}</p>
-            <EditNote note={note} />
-            <DeleteNote noteId={note.id} />
+            <div className="flex gap-2">
+              <EditNote note={note} />
+              <DeleteNote noteId={note.id} />
+            </div>
           </li>
         ))}
       </ul>

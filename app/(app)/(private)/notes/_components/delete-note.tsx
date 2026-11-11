@@ -18,7 +18,13 @@ import { deleteNote } from "@/app/(app)/(private)/notes/actions";
 export function DeleteNote({ noteId }: { noteId: number }) {
   return (
     <AlertDialog>
-      <AlertDialogTrigger render={<Button variant="outline">Delete</Button>} />
+      <AlertDialogTrigger
+        render={
+          <Button variant="outline" size="sm">
+            Delete
+          </Button>
+        }
+      />
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Are you sure?</AlertDialogTitle>

@@ -22,7 +22,13 @@ interface DeleteApplicationProps {
 export function DeleteApplication({ applicationId }: DeleteApplicationProps) {
   return (
     <AlertDialog>
-      <AlertDialogTrigger render={<Button variant="outline">Delete</Button>} />
+      <AlertDialogTrigger
+        render={
+          <Button variant="outline" size="sm">
+            Delete
+          </Button>
+        }
+      />
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>

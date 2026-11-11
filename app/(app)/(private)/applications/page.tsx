@@ -58,8 +58,10 @@ export default async function JobApplications() {
                 {application.status}
               </TableCell>
               <TableCell className="text-right">
-                <EditApplication application={application} />
-                <DeleteApplication applicationId={application.id} />
+                <div className="flex gap-2 justify-end">
+                  <EditApplication application={application} />
+                  <DeleteApplication applicationId={application.id} />
+                </div>
               </TableCell>
             </TableRow>
           ))}

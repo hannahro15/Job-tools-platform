@@ -15,7 +15,9 @@ import type { Application } from "@/lib/db/schema";
 export function EditApplication({ application }: { application: Application }) {
   return (
     <Dialog>
-      <DialogTrigger render={<Button />}>Edit Application</DialogTrigger>
+      <DialogTrigger render={<Button variant="outline" size="sm" />}>
+        Edit
+      </DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Edit Application</DialogTitle>

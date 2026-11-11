@@ -15,7 +15,9 @@ import type { Note } from "@/lib/db/schema";
 export function EditNote({ note }: { note: Note }) {
   return (
     <Dialog>
-      <DialogTrigger render={<Button />}>Edit Note</DialogTrigger>
+      <DialogTrigger render={<Button variant="outline" size="sm" />}>
+        Edit
+      </DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Edit Note</DialogTitle>
