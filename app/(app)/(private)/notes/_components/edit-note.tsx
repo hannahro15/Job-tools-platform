@@ -60,7 +60,7 @@ export function EditNote({ note }: { note: Note }) {
               required
             />
           </div>
-          <Button type="submit">Save Changes</Button>
+          <Button type="submit">Save</Button>
         </form>
       </DialogContent>
     </Dialog>

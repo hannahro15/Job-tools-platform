@@ -53,9 +53,7 @@ export function AddNote() {
               required
             />
           </div>
-          <Button type="submit" className="mt-4">
-            Add Note
-          </Button>
+          <Button type="submit">Save</Button>
         </form>
       </DialogContent>
     </Dialog>
