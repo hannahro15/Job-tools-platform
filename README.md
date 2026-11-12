@@ -22,7 +22,7 @@ A job-related platform with a variety of tools to help with job hunting, startin
 
 ## Wireframes
 
-Wireframes of every page, drawn to plan the design. No page matches its wireframe fully yet, and the plans may change as the pages are built.
+Wireframes of every page, made with Claude Code's design tool to plan the layout. They show layout and content only: the finished app will have more colour and visual detail. No page matches its wireframe fully yet, and the wireframes are subject to change over time.
 
 <details>
 <summary><strong>Show wireframes</strong></summary>
@@ -171,4 +171,5 @@ Wireframes of every page, drawn to plan the design. No page matches its wirefram
 - `lib/utils.ts` – small shared helpers
 - `drizzle/` – database migrations
 - `proxy.ts` – runs Clerk on every request so pages and server actions know who is signed in
+- `docs/wireframes/` – the wireframe images shown in the Wireframes section
 - `CODING_STANDARDS.md` – the rules the code follows: ownership checks, validation, naming, comments, tests and accessibility
