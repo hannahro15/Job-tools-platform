@@ -20,6 +20,78 @@ A job-related platform with a variety of tools to help with job hunting, startin
 - **Neurodivergent Support** – resources on disclosure, interview adjustments and workplace accommodations, plus adjustment request templates
 - **Dashboard** – simple stats on your job search: applications by status, applications per week, and response rate
 
+## Design
+
+Wireframes of every page, drawn before building them. They're a snapshot of the current plan: the built pages may look a little different, and the planned pages will change as they're built.
+
+### Built pages
+
+**Home** (signed out)
+
+![Home page: the app name, a one-line description, Sign up and Sign in buttons, and cards for the application tracker, notes and neurodivergent support](docs/wireframes/home.png)
+
+**Application tracker**
+
+![Application tracker: a table of job applications with the date applied, company, role, location, a status badge, and Edit and Delete buttons](docs/wireframes/application-tracker.png)
+
+**Application tracker on a phone**
+
+<img src="docs/wireframes/application-tracker-phone.png" width="300" alt="Application tracker at phone width: each application is a card with the company, status badge, role, location and date, and full-width Edit and Delete buttons">
+
+**Notes**
+
+![Notes: one column of note cards, each with a title, a category badge, the date added, the note text, and Edit and Delete buttons](docs/wireframes/notes.png)
+
+**Empty states**
+
+![Empty states: "No applications yet" and "No notes yet", each with a short explanation and an Add button](docs/wireframes/empty-states.png)
+
+<details>
+<summary><strong>Planned pages</strong></summary>
+
+**Dashboard**
+
+![Dashboard: total applications, response rate, a count for each status, and a bar chart of applications per week for the last 8 weeks](docs/wireframes/dashboard.png)
+
+**Neurodivergent support**
+
+![Neurodivergent support: cards linking to guides on telling an employer, interview adjustments and support at work, plus message templates for asking for adjustments](docs/wireframes/neurodivergent-support.png)
+
+**Job boards & communities**
+
+![Job boards and communities: placeholder links grouped as general, tech, remote and inclusive employers, followed by communities](docs/wireframes/job-boards-and-communities.png)
+
+**Cover letter templates**
+
+![Cover letter templates: standard, career change and speculative templates, each with a preview and a Copy template button](docs/wireframes/cover-letter-templates.png)
+
+**Interview prep**
+
+![Interview prep: the STAR method in four steps, then example questions and tips for behavioural, technical and general questions](docs/wireframes/interview-prep.png)
+
+</details>
+
+<details>
+<summary><strong>Other screens</strong></summary>
+
+**Private page, signed out**
+
+![A private page seen while signed out: "Sign in to continue", a short reason, and Sign in and Create a free account buttons](docs/wireframes/sign-in-prompt.png)
+
+**Sign in**
+
+![Sign in page: the app name, a placeholder where Clerk's sign-in form goes, and a link back to the home page](docs/wireframes/sign-in.png)
+
+**Page not found**
+
+![Page not found: "Page not found", a short explanation and a Go to the home page button](docs/wireframes/page-not-found.png)
+
+**Error page**
+
+![Error page: "Something went wrong", a short explanation, and Try again and Go to the home page buttons](docs/wireframes/error-page.png)
+
+</details>
+
 ## Tech Stack
 
 - [Next.js](https://nextjs.org/)
