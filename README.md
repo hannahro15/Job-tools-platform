@@ -20,11 +20,12 @@ A job-related platform with a variety of tools to help with job hunting, startin
 - **Neurodivergent Support** – resources on disclosure, interview adjustments and workplace accommodations, plus adjustment request templates
 - **Dashboard** – simple stats on your job search: applications by status, applications per week, and response rate
 
-## Design
+## Wireframes
 
-Wireframes of every page, drawn before building them. They're a snapshot of the current plan: the built pages may look a little different, and the planned pages will change as they're built.
+Wireframes of every page, drawn to plan the design. No page matches its wireframe fully yet, and the plans may change as the pages are built.
 
-### Built pages
+<details>
+<summary><strong>Show wireframes</strong></summary>
 
 **Home** (signed out)
 
@@ -46,9 +47,6 @@ Wireframes of every page, drawn before building them. They're a snapshot of the 
 
 ![Empty states: "No applications yet" and "No notes yet", each with a short explanation and an Add button](docs/wireframes/empty-states.png)
 
-<details>
-<summary><strong>Planned pages</strong></summary>
-
 **Dashboard**
 
 ![Dashboard: total applications, response rate, a count for each status, and a bar chart of applications per week for the last 8 weeks](docs/wireframes/dashboard.png)
@@ -68,11 +66,6 @@ Wireframes of every page, drawn before building them. They're a snapshot of the 
 **Interview prep**
 
 ![Interview prep: the STAR method in four steps, then example questions and tips for behavioural, technical and general questions](docs/wireframes/interview-prep.png)
-
-</details>
-
-<details>
-<summary><strong>Other screens</strong></summary>
 
 **Private page, signed out**
 
