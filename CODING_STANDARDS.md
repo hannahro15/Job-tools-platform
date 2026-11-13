@@ -50,7 +50,7 @@ These apply once Vitest is set up (#9).
 - **Placement.** A component used by one feature lives in that feature's `_components/`. It moves to `components/` only when a second feature uses it. `components/ui/` is for shadcn components only.
 - **Named exports**, except the files Next.js requires to be default exports (`page.tsx`, `layout.tsx`, `error.tsx`, `not-found.tsx`, `loading.tsx`).
 - **File names** are kebab-case and singular (`edit-note.tsx`).
-- **Forms share their fields.** Add and edit dialogs for the same thing use one fields component. Edit passes the row, add passes nothing (`defaultValue={application?.company}`).
+- **Add and edit forms are separate for now.** Each dialog has its own form, so a field change is made in both. Keep the two forms' fields in the same order, with the same `id`s, `name`s and labels. Sharing them in one fields component is a possible later refactor (#142, #143).
 - **Edit forms** take the full row (`application: Application`) and use `defaultValue`, not `value`. Date inputs use `date.toISOString().slice(0, 10)`.
 - **Base UI, not Radix.** Dialog triggers are written as `<DialogTrigger render={<Button />}>Label</DialogTrigger>`. There is no `asChild`.
 - **`Link`** comes from `next/link`.
@@ -71,7 +71,7 @@ These apply once Vitest is set up (#9).
 
 ## Accessibility
 
-- Every input has a `<label htmlFor>` that matches its `id`. Ids are unique on the page; in rows, add the row id (`company-${application.id}`).
+- Every input has a `<label htmlFor>` that matches its `id`. Ids are unique among what's on the page at once. Fields in a row's dialog can reuse the same ids, because Base UI unmounts closed dialogs; anything shown in every row at the same time adds the row id (`company-${application.id}`).
 - Required fields are marked on screen, not only with `required`.
 - Buttons and icon-only controls have an accessible name.
 - Colour is never the only signal: a status badge always shows its text.
