@@ -11,6 +11,10 @@ import {
 import { Button } from "@/components/ui/button";
 import { editNote } from "@/app/(app)/(private)/notes/actions";
 import type { Note } from "@/lib/db/schema";
+import { Input } from "@/components/ui/input";
+import { Select } from "@/components/ui/select";
+import { Label } from "@/components/ui/label";
+import { TextArea } from "@/components/ui/textarea";
 
 export function EditNote({ note }: { note: Note }) {
   return (
@@ -28,8 +32,8 @@ export function EditNote({ note }: { note: Note }) {
         <form className="flex flex-col gap-4" action={editNote}>
           <input type="hidden" name="id" value={note.id} />
           <div className="flex flex-col gap-1">
-            <label htmlFor="title">Title: </label>
-            <input
+            <Label htmlFor="title">Title: </Label>
+            <Input
               defaultValue={note.title}
               type="text"
               name="title"
@@ -38,8 +42,8 @@ export function EditNote({ note }: { note: Note }) {
             />
           </div>
           <div className="flex flex-col gap-1">
-            <label htmlFor="category">Category: </label>
-            <select
+            <Label htmlFor="category">Category: </Label>
+            <Select
               defaultValue={note.category}
               id="category"
               name="category"
@@ -51,11 +55,11 @@ export function EditNote({ note }: { note: Note }) {
               <option value="technical">Technical</option>
               <option value="networking">Networking</option>
               <option value="general">General</option>
-            </select>
+            </Select>
           </div>
           <div className="flex flex-col gap-1">
-            <label htmlFor="content">Content: </label>
-            <textarea
+            <Label htmlFor="content">Content: </Label>
+            <TextArea
               defaultValue={note.content}
               name="content"
               id="content"

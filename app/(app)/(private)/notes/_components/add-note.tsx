@@ -9,7 +9,11 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { addNote } from "@/app/(app)/(private)/notes/actions";
+import { Select } from "@/components/ui/select";
+import { Label } from "@/components/ui/label";
+import { TextArea } from "@/components/ui/textarea";
 
 export function AddNote() {
   return (
@@ -24,15 +28,15 @@ export function AddNote() {
         </DialogHeader>
         <form action={addNote} className="flex flex-col gap-4">
           <div className="flex flex-col gap-1">
-            <label htmlFor="title">Title</label>
-            <input id="title" name="title" className="w-full" required />
+            <Label htmlFor="title">Title</Label>
+            <Input id="title" name="title" className="w-full" required />
           </div>
           <div className="flex flex-col gap-1">
-            <label htmlFor="category">Category</label>
-            <select
+            <Label htmlFor="category">Category</Label>
+            <Select
               id="category"
               name="category"
-              className="text-sm text-muted-foreground"
+              className="text-sm"
               required
             >
               <option value="">Select a category</option>
@@ -44,8 +48,8 @@ export function AddNote() {
             </select>
           </div>
           <div className="flex flex-col gap-1">
-            <label htmlFor="content">Note</label>
-            <textarea
+            <Label htmlFor="content">Note</Label>
+            <TextArea
               id="content"
               name="content"
               rows={4}
