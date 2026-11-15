@@ -12,7 +12,13 @@ import { Button } from "@/components/ui/button";
 import { editNote } from "@/app/(app)/(private)/notes/actions";
 import type { Note } from "@/lib/db/schema";
 import { Input } from "@/components/ui/input";
-import { Select } from "@/components/ui/select";
+import {
+  Select,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+} from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
@@ -49,11 +55,16 @@ export function EditNote({ note }: { note: Note }) {
               name="category"
               required
             >
-              <option value="job">Job</option>
-              <option value="interview">Interview</option>
-              <option value="technical">Technical</option>
-              <option value="networking">Networking</option>
-              <option value="general">General</option>
+              <SelectTrigger>
+                <SelectValue placeholder="Select a category" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="job">Job</SelectItem>
+                <SelectItem value="interview">Interview</SelectItem>
+                <SelectItem value="technical">Technical</SelectItem>
+                <SelectItem value="networking">Networking</SelectItem>
+                <SelectItem value="general">General</SelectItem>
+              </SelectContent>
             </Select>
           </div>
           <div className="flex flex-col gap-1">

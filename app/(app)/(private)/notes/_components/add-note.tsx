@@ -11,9 +11,15 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { addNote } from "@/app/(app)/(private)/notes/actions";
-import { Select } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+} from "@/components/ui/select";
 
 export function AddNote() {
   return (
@@ -34,12 +40,16 @@ export function AddNote() {
           <div className="flex flex-col gap-1">
             <Label htmlFor="category">Category</Label>
             <Select id="category" name="category" required>
-              <option value="">Select a category</option>
-              <option value="job">Job</option>
-              <option value="interview">Interview</option>
-              <option value="technical">Technical</option>
-              <option value="networking">Networking</option>
-              <option value="general">General</option>
+              <SelectTrigger>
+                <SelectValue placeholder="Select a category" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="job">Job</SelectItem>
+                <SelectItem value="interview">Interview</SelectItem>
+                <SelectItem value="technical">Technical</SelectItem>
+                <SelectItem value="networking">Networking</SelectItem>
+                <SelectItem value="general">General</SelectItem>
+              </SelectContent>
             </Select>
           </div>
           <div className="flex flex-col gap-1">
