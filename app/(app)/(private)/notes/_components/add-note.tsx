@@ -33,19 +33,14 @@ export function AddNote() {
           </div>
           <div className="flex flex-col gap-1">
             <Label htmlFor="category">Category</Label>
-            <Select
-              id="category"
-              name="category"
-              className="text-sm"
-              required
-            >
+            <Select id="category" name="category" className="text-sm" required>
               <option value="">Select a category</option>
               <option value="job">Job</option>
               <option value="interview">Interview</option>
               <option value="technical">Technical</option>
               <option value="networking">Networking</option>
               <option value="general">General</option>
-            </select>
+            </Select>
           </div>
           <div className="flex flex-col gap-1">
             <Label htmlFor="content">Note</Label>
