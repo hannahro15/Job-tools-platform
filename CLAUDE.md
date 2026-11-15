@@ -36,7 +36,3 @@ A portfolio project: job-search tools for jobseekers, with a focus on neurodiver
 - A new component used by one feature goes in that feature's `_components/`; move it to `components/` only once a second feature needs it
 - `lib/db/schema.ts` – tables, enums and row types (`Application`, `Note` via `$inferSelect`)
 - `drizzle/` – migrations (commit the SQL, snapshot and journal together with the schema change)
-
-## Coding standards
-
-Read `CODING_STANDARDS.md` before writing or reviewing code: ownership checks, auth, server actions, validation, Base UI, naming, comments, tests and accessibility.

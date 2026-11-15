@@ -172,4 +172,3 @@ Wireframes of every page, made with Claude Code's design tool to plan the layout
 - `drizzle/` – database migrations
 - `proxy.ts` – runs Clerk on every request so pages and server actions know who is signed in
 - `docs/wireframes/` – the wireframe images shown in the Wireframes section
-- `CODING_STANDARDS.md` – the rules the code follows: ownership checks, validation, naming, comments, tests and accessibility
