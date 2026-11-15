@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input";
 import { addNote } from "@/app/(app)/(private)/notes/actions";
 import { Select } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { TextArea } from "@/components/ui/textarea";
+import { Textarea } from "@/components/ui/textarea";
 
 export function AddNote() {
   return (
@@ -33,7 +33,7 @@ export function AddNote() {
           </div>
           <div className="flex flex-col gap-1">
             <Label htmlFor="category">Category</Label>
-            <Select id="category" name="category" className="text-sm" required>
+            <Select id="category" name="category" required>
               <option value="">Select a category</option>
               <option value="job">Job</option>
               <option value="interview">Interview</option>
@@ -44,7 +44,7 @@ export function AddNote() {
           </div>
           <div className="flex flex-col gap-1">
             <Label htmlFor="content">Note</Label>
-            <TextArea
+            <Textarea
               id="content"
               name="content"
               rows={4}

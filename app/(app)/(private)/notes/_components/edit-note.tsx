@@ -14,7 +14,7 @@ import type { Note } from "@/lib/db/schema";
 import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { TextArea } from "@/components/ui/textarea";
+import { Textarea } from "@/components/ui/textarea";
 
 export function EditNote({ note }: { note: Note }) {
   return (
@@ -47,7 +47,6 @@ export function EditNote({ note }: { note: Note }) {
               defaultValue={note.category}
               id="category"
               name="category"
-              className="text-sm text-muted-foreground"
               required
             >
               <option value="job">Job</option>
@@ -59,7 +58,7 @@ export function EditNote({ note }: { note: Note }) {
           </div>
           <div className="flex flex-col gap-1">
             <Label htmlFor="content">Content: </Label>
-            <TextArea
+            <Textarea
               defaultValue={note.content}
               name="content"
               id="content"
