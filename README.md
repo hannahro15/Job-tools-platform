@@ -150,6 +150,7 @@ Wireframes of every page, made with Claude Code's design tool to plan the layout
 - `npm run build` – build the app for production
 - `npm run start` – run the production build
 - `npm run lint` – check the code with ESLint
+- `npm test` – run the Vitest tests. It keeps watching and re-runs the tests when you save a file; press `q` to quit
 - `npx tsc --noEmit` – type check the code
 - `npx drizzle-kit generate` – create a migration after changing `lib/db/schema.ts`
 - `npx drizzle-kit migrate` – apply migrations to the database
@@ -170,5 +171,7 @@ Wireframes of every page, made with Claude Code's design tool to plan the layout
 - `lib/db/` – database connection and Drizzle schema
 - `lib/utils.ts` – small shared helpers
 - `drizzle/` – database migrations
+- `__tests__/` – Vitest tests, one `<name>.test.ts` file per source file (e.g. `validation.test.ts` for `lib/validation.ts`)
+- `vitest.config.mts` – Vitest settings; it lets tests use the `@/` import alias
 - `proxy.ts` – runs Clerk on every request so pages and server actions know who is signed in
 - `docs/wireframes/` – the wireframe images shown in the Wireframes section
