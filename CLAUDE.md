@@ -43,10 +43,6 @@ A portfolio project: job-search tools for jobseekers, with a focus on neurodiver
 
 Issues live in GitHub Issues for `hannahro15/Job-tools-platform`, worked through the `gh` CLI. See `docs/agents/issue-tracker.md`.
 
-### Triage labels
-
-The five default triage labels (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`). See `docs/agents/triage-labels.md`.
-
 ### Domain docs
 
 Single-context, with no `GLOSSARY.md` or ADRs: agreed terms and decisions live in the GitHub issue they affect. See `docs/agents/domain.md`.
