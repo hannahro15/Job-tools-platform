@@ -25,7 +25,7 @@ export default async function JobApplications() {
     .select()
     .from(applications)
     .where(eq(applications.user_id, userId))
-    .orderBy(desc(applications.date_applied));
+    .orderBy(desc(applications.date_applied), desc(applications.created_at));
 
   return (
     <div>

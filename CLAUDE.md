@@ -36,3 +36,17 @@ A portfolio project: job-search tools for jobseekers, with a focus on neurodiver
 - A new component used by one feature goes in that feature's `_components/`; move it to `components/` only once a second feature needs it
 - `lib/db/schema.ts` – tables, enums and row types (`Application`, `Note` via `$inferSelect`)
 - `drizzle/` – migrations (commit the SQL, snapshot and journal together with the schema change)
+
+## Agent skills
+
+### Issue tracker
+
+Issues live in GitHub Issues for `hannahro15/Job-tools-platform`, worked through the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The five default triage labels (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`). See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context, with no `GLOSSARY.md` or ADRs: agreed terms and decisions live in the GitHub issue they affect. See `docs/agents/domain.md`.
