@@ -24,12 +24,22 @@ export default async function Notes() {
       <AddNote />
       <ul>
         {userNotes.map((note) => (
-          <li key={note.id}>
-            <h2>{note.title}</h2>
-            <p>Category: {note.category}</p>
-            <p>{note.content}</p>
-            <p>Created at: {note.created_at.toLocaleDateString()}</p>
-            <div className="flex gap-2">
+          <li key={note.id} className="border-2 p-4 rounded-md text-center">
+            <h2>
+              <strong className="text-lg">{note.title}</strong>
+            </h2>
+            <p className="whitespace-pre-wrap">
+              <strong>Category:</strong> {note.category}
+            </p>
+            <p className="whitespace-pre-wrap">
+              <strong>Note: </strong>
+              {note.content}
+            </p>
+            <p className="whitespace-pre-wrap">
+              <strong>Created at:</strong>{" "}
+              {note.created_at.toLocaleDateString()}
+            </p>
+            <div className=" flex gap-4 justify-center my-2">
               <EditNote note={note} />
               <DeleteNote noteId={note.id} />
             </div>
