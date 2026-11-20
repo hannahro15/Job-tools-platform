@@ -15,7 +15,6 @@ A job-related platform with a variety of tools to help with job hunting, startin
 
 - **Application Tracker improvements** – filter by status, an Assessment status for tests and assessment centres, and changing status straight from the table
 - **Job Boards and Communities** – a curated list of job boards and jobseeker communities, including inclusive and neurodiversity-friendly ones
-- **Cover Letter Templates** – templates to copy and adapt for each application
 - **Interview Question Guide** – common interview questions by type, with tips and the STAR method
 - **Neurodivergent Support** – resources on disclosure, interview adjustments and workplace accommodations, plus adjustment request templates
 - **Dashboard** – simple stats on your job search: applications by status, applications per week, and response rate
@@ -58,10 +57,6 @@ Wireframes of every page, made with Claude Code's design tool to plan the layout
 **Job boards & communities**
 
 ![Job boards and communities: placeholder links grouped as general, tech, remote and inclusive employers, followed by communities](docs/wireframes/job-boards-and-communities.png)
-
-**Cover letter templates**
-
-![Cover letter templates: standard, career change and speculative templates, each with a preview and a Copy template button](docs/wireframes/cover-letter-templates.png)
 
 **Interview prep**
 

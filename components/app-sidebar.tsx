@@ -8,7 +8,6 @@ import {
   NotebookPen,
   House,
   Search,
-  MailPen,
 } from "lucide-react";
 
 import {
@@ -31,11 +30,6 @@ const items = [
   { title: "Job Board", url: "/job-board", icon: Search },
   { title: "Application Tracker", url: "/applications", icon: Briefcase },
   { title: "Notes", url: "/notes", icon: NotebookPen },
-  {
-    title: "Cover Letter Builder",
-    url: "/cover-letter-builder",
-    icon: MailPen,
-  },
   { title: "Interview Prep", url: "/interview-prep", icon: MessagesSquare },
   {
     title: "Neurodivergent Support",
