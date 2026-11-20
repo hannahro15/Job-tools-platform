@@ -175,3 +175,9 @@ Wireframes of every page, made with Claude Code's design tool to plan the layout
 - `vitest.config.mts` – Vitest settings; it lets tests use the `@/` import alias
 - `proxy.ts` – runs Clerk on every request so pages and server actions know who is signed in
 - `docs/wireframes/` – the wireframe images shown in the Wireframes section
+
+## License
+
+© 2026 Hannah Olbrich. All rights reserved.
+
+This is a personal portfolio project. It isn't open source, and it isn't open to contributions.
