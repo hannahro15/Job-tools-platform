@@ -121,6 +121,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
   body {
     @apply bg-background text-foreground;
   }
