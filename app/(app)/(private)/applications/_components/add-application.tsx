@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -21,8 +22,14 @@ import {
 } from "@/components/ui/select";
 
 export default function AddApplication() {
+  const [open, setOpen] = useState(false);
+
+  function handleOpenChange(isOpen: boolean) {
+    setOpen(isOpen);
+  }
+
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger render={<Button />}>Add Application</DialogTrigger>
       <DialogContent>
         <DialogHeader>
