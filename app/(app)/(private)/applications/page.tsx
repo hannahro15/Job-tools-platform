@@ -34,14 +34,14 @@ export default async function JobApplications() {
         <AddApplication />
       </div>
       <Table>
-        <TableCaption>Recent job applications.</TableCaption>
+        <TableCaption>Your job applications.</TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead>Date Applied</TableHead>
             <TableHead>Company</TableHead>
             <TableHead>Role</TableHead>
             <TableHead>Location</TableHead>
-            <TableHead className="text-right">Status</TableHead>
+            <TableHead>Status</TableHead>
             <TableHead className="text-right">Actions</TableHead>
           </TableRow>
         </TableHeader>
@@ -54,9 +54,7 @@ export default async function JobApplications() {
               <TableCell>{application.company}</TableCell>
               <TableCell>{application.role}</TableCell>
               <TableCell>{application.location}</TableCell>
-              <TableCell className="text-right capitalize">
-                {application.status}
-              </TableCell>
+              <TableCell className="capitalize">{application.status}</TableCell>
               <TableCell>
                 <div className="flex gap-2 justify-end">
                   <EditApplication application={application} />
