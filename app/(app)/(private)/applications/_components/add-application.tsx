@@ -45,7 +45,13 @@ export default function AddApplication() {
           </div>
           <div className="flex flex-col gap-1">
             <Label htmlFor="company">Company: </Label>
-            <Input type="text" name="company" id="company" required />
+            <Input
+              type="text"
+              name="company"
+              id="company"
+              maxLength={100}
+              required
+            />
           </div>
           <div className="flex flex-col gap-1">
             <Label htmlFor="role">Role: </Label>

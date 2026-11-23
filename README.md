@@ -26,10 +26,6 @@ Wireframes of every page, made with Claude Code's design tool to plan the layout
 <details>
 <summary><strong>Show wireframes</strong></summary>
 
-**Home** (signed out)
-
-![Home page: the app name, a one-line description, Sign up and Sign in buttons, and cards for the application tracker, notes and neurodivergent support](docs/wireframes/home.png)
-
 **Application tracker**
 
 ![Application tracker: a table of job applications with the date applied, company, role, location, a status badge, and Edit and Delete buttons](docs/wireframes/application-tracker.png)
