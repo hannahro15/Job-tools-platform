@@ -25,6 +25,7 @@ A portfolio project: job-search tools for jobseekers, with a focus on neurodiver
 - `npx tsc --noEmit` to type check (ignore errors in `.next/`; they're stale generated files, so restart the dev server)
 - `npx drizzle-kit generate` after changing `lib/db/schema.ts`, then `npx drizzle-kit migrate`
 - `npx drizzle-kit studio` to browse the database
+- `npx vitest run` to run the tests once. `npm test` stays in watch mode and never exits, so don't use it from an agent. Test files go in `__tests__/<name>.test.ts`, one per source file
 - Env vars live in `.env` (not `.env.local`, because drizzle-kit only reads `.env`)
 
 ## Structure
@@ -37,12 +38,24 @@ A portfolio project: job-search tools for jobseekers, with a focus on neurodiver
 - `lib/db/schema.ts` – tables, enums and row types (`Application`, `Note` via `$inferSelect`)
 - `drizzle/` – migrations (commit the SQL, snapshot and journal together with the schema change)
 
+## Security
+
+- Every server action calls `auth()` first and stops if there's no `userId`.
+- Every database query on user data includes `user_id` in its `where` clause, including updates and deletes by id. Server actions can be called directly, so the id from the form is never enough on its own.
+
 ## Agent skills
 
 ### Issue tracker
 
-Issues live in GitHub Issues for `hannahro15/Job-tools-platform`, worked through the `gh` CLI. See `docs/agents/issue-tracker.md`.
+Issues live in GitHub Issues for `hannahro15/Job-tools-platform`, worked through the `gh` CLI.
+
+- One change per issue, small enough for one commit. Split issues that grow several independent parts.
+- Body sections, in order: Description (ending with a **Files:** line), User story, Checklist, Acceptance criteria.
+- Every issue gets one of the `must-have`, `should-have` or `could-have` labels, plus type labels such as `feature`, `bug`, `chore`, `testing`.
+- Each issue stands on its own: no issue numbers in the body ("Related: #…", "Split from #…"). If order matters, say it in words.
+- To split or merge, close the original as "not planned" with a "Split into #…" or "Merged into #…" comment.
+- Ask before creating issues or restructuring the tracker. No milestones.
 
 ### Domain docs
 
-Single-context, with no `GLOSSARY.md` or ADRs: agreed terms and decisions live in the GitHub issue they affect. See `docs/agents/domain.md`.
+Single-context, with no `GLOSSARY.md` or ADRs: agreed terms and decisions live in the GitHub issue they affect.
