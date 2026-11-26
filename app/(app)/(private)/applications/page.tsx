@@ -18,9 +18,11 @@ import { auth } from "@clerk/nextjs/server";
 
 export default async function JobApplications() {
   const { userId } = await auth();
+  // Layout hides the page when user is signed out, but the page still runs
   if (!userId) {
-    throw new Error("User not authenticated");
+    return null;
   }
+
   const applicationsData = await db
     .select()
     .from(applications)

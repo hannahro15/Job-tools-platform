@@ -8,6 +8,7 @@ import { EditNote } from "./_components/edit-note";
 
 export default async function Notes() {
   const { userId } = await auth();
+  // Layout hides the page when user is signed out, but the page still runs
   if (!userId) {
     return null;
   }
