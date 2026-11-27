@@ -29,10 +29,10 @@ export default function Home() {
       <ul className="list-disc ml-5">
         <li>Track your job applications from start to finish.</li>
         <li>Organise and manage notes related to your job search.</li>
+        <li>Access interview preparation resources and tips.</li>
       </ul>
       <h2 className="text-xl font-bold text-center py-4">Coming Soon</h2>
       <ul className="list-disc ml-5">
-        <li>Prepare for interviews with dedicated tools and resources.</li>
         <li>Access support for neurodivergent job seekers.</li>
         <li>Dashboard for an overview of your job search progress.</li>
         <li>Job boards and communities for networking and opportunities.</li>
