@@ -61,7 +61,10 @@ export default function InterviewPrep() {
         <h2 className="text-xl font-bold mt-4">General tips</h2>
         <ul>
           <li>Tip 1: Research the company and its culture.</li>
-          <li>Tip 2: Practice common interview questions.</li>
+          <li>
+            Tip 2: Practice common interview questions. Remember to use the STAR
+            method (Situation, Task, Action, Result) for behavioral questions.
+          </li>
           <li>
             Tip 3: Prepare questions to ask the interviewer at the end of the
             interview.
